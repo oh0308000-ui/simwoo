@@ -127,6 +127,15 @@ document.getElementById('age').addEventListener('input', function(){
   this.value=this.value.replace(/\D/g,'').slice(0,3);
 });
 
+
+function isRealDateString(value){
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const [y,m,d] = value.split("-").map(Number);
+  if(m < 1 || m > 12 || d < 1 || d > 31) return false;
+  const dt = new Date(y, m - 1, d);
+  return dt.getFullYear() === y && dt.getMonth() === m - 1 && dt.getDate() === d;
+}
+
 function startTest(){
   const n=document.getElementById('name').value.trim();
   const age=document.getElementById('age').value.trim();
