@@ -92,6 +92,55 @@ footer{padding:35px 8vw;display:flex;justify-content:space-between;color:#777b75
   background:#e8eee7;
 }
 
+
+/* --- MIND FIRST handwritten highlight --- */
+.hero-title .first-word{
+  position:relative;
+  display:inline-block;
+  z-index:2;
+  margin:0 .16em;
+  padding:.01em .12em .05em;
+  font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive !important;
+  font-size:1.12em;
+  line-height:.86;
+  font-style:italic;
+  font-weight:800;
+  letter-spacing:-.13em;
+  color:#df7546 !important;
+  transform:rotate(-5deg) translateY(-.03em);
+  text-shadow:none;
+  border:0 !important;
+}
+.hero-title .first-word::before,
+.hero-title .first-word::after{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:-18%;
+  top:-22%;
+  width:136%;
+  height:135%;
+  border:3px solid rgba(223,117,70,.76);
+  border-radius:50% 46% 53% 48%;
+  pointer-events:none;
+}
+.hero-title .first-word::before{
+  transform:rotate(-7deg);
+  border-width:3px 2px 4px 3px;
+  opacity:.82;
+}
+.hero-title .first-word::after{
+  left:-14%;
+  top:-15%;
+  width:130%;
+  height:124%;
+  transform:rotate(4deg);
+  border-width:2px 4px 2px 3px;
+  opacity:.58;
+  filter:blur(.15px);
+}
+.hero-title{overflow:visible}
+
 </style></head>
 <body>
 <nav class="nav"><div class="logo"><em>心</em>우선 상담센터</div><div class="menu"><a href="#about">센터 소개</a><a href="#counselor">상담가</a><a href="#areas">상담 분야</a><a href="#guide">상담 안내</a></div><a class="pill" href="#contact">상담 예약</a></nav>
