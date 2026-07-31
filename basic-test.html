@@ -125,9 +125,23 @@ document.getElementById('date').addEventListener('input', function(){
   else this.value=v.slice(0,4)+'.'+v.slice(4,6)+'.'+v.slice(6);
 });
 document.getElementById('birth').addEventListener('input', function(){
-  this.value=this.value.replace(/\D/g,'').slice(0,3);
-});
 
+  let v = this.value.replace(/\D/g,'').slice(0,8);
+
+  if(v.length <= 4){
+    this.value = v;
+  }
+  else if(v.length <= 6){
+    this.value = v.slice(0,4) + '.' + v.slice(4);
+  }
+  else{
+    this.value =
+      v.slice(0,4) + '.' +
+      v.slice(4,6) + '.' +
+      v.slice(6,8);
+  }
+
+});
 function startTest(){
   const n=document.getElementById('name').value.trim();
   const birth=document.getElementById('birth').value.trim();
